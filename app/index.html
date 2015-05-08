@@ -1,120 +1,192 @@
 <!doctype html>
 <html class="no-js">
-<head>
-  <meta charset="utf-8">
-  <title>front</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width">
-  <link rel="shortcut icon" href="/favicon.ico">
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-  <!-- build:css(.) styles/vendor.css -->
-  <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-  <!-- endbower -->
-  <!-- endbuild -->
-  <!-- build:css(.tmp) styles/main.css -->
-  <link rel="stylesheet" href="styles/main.css">
-  <!-- endbuild -->
-</head>
-<body>
+  <head>
+    <meta charset="utf-8">
+    <title>front</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body>
     <!--[if lt IE 10]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-      <![endif]-->
-
-
-      <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container-fluid">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#"><i class="glyphicon glyphicon-th-list"></i></a>
+    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Nueva tarea</h4>
           </div>
-
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-            <form class="navbar-form navbar-left" role="search">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
+          <div class="modal-body">
+            <form> <div class="form-group">
+              <label for="exampleInputTitle">
+                titulo
+              </label>
+              <input type="title" class="form-control" id="exampleInputTitle" placeholder="Titulo">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputCategory">
+                Categoria
+              </label>
+              <select class="form-control">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputType">
+                Tipo
+              </label>
+              <select class="form-control">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputStatus">
+                Status
+              </label>
+              <select class="form-control">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputDate">
+                Fecha
+              </label>
+              <select class="form-control">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputDate">
+                  Fecha
+                </label>
+              <div class='input-group date' id='datetimepicker1'>
+                <input type='text' class="form-control" />
+                <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+                </span>
               </div>
-              <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
-            </form>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">ToDo</a></li>
-              <li><a href="#">Categoria</a></li>
-
-            </ul>
-          </div><!-- /.navbar-collapse -->
+            </div>
+            
+            
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#"><i class="glyphicon glyphicon-th-list"></i></a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">ToDo</a></li>
+          <li><a href="#">Categoria</a></li>
+        </ul>
+        </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
       </nav>
       <section class="container-fluid">
-        <div class="row"> 
-        <div class="col-md-4 col-sm-6 col-xs-12">
-           <div class="box box-btn"><i class="glyphicon glyphicon-plus"></i></div>
-         </div>
-         <div class="col-md-4 col-sm-6 col-xs-12">
-           <div class="box">
-            <div>
-             <b>title</b>:XXXXXXXX<br>
-             <b>Categoria</b>:XXXXXXXX<br>
-             <b>Tipo</b>:XXXXXXXXXXX
-             </div>
+        <div class="row">
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="box box-btn" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-plus"></i></div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="box">
+              <div>
+                <b>title</b>:XXXXXXXX<br>
+                <b>Categoria</b>:XXXXXXXX<br>
+                <b>Tipo</b>:XXXXXXXXXXX
+              </div>
               <button type="button" class="status btn btn-sm btn-info">
-                 <i class="glyphicon glyphicon-ok"></i>
+              <i class="glyphicon glyphicon-ok"></i>
               </button>
-           </div>
-         </div>
-         <div class="col-md-4 col-sm-6 col-xs-12">
-           <div class="box"></div>
-         </div>
-
-       </div>
-
-     </section>
-
-
-
-
-
-
-     <!-- build:js(.) scripts/vendor.js -->
-     <!-- bower:js -->
-     <script src="bower_components/jquery/dist/jquery.js"></script>
-     <!-- endbower -->
-     <!-- endbuild -->
-
-     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-     <script>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <div class="box"></div>
+          </div>
+        </div>
+      </section>
+      <!-- build:js(.) scripts/vendor.js -->
+      <!-- bower:js -->
+      <script src="bower_components/jquery/dist/jquery.js"></script>
+      <script src="bower_components/moment/moment.js"></script>
+      <script src="bower_components/eonasdan-bootstrap-datetimepicker/build/js/bootstrap-datetimepicker.min.js"></script>
+      <script src="bower_components/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js"></script>
+      <!-- endbower -->
+      <!-- endbuild -->
+      <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+      <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
       e=o.createElement(i);r=o.getElementsByTagName(i)[0];
       e.src='//www.google-analytics.com/analytics.js';
       r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
       ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
-
-    <!-- build:js(.) scripts/plugins.js -->
-    <script src="bower_components/bootstrap/js/affix.js"></script>
-    <script src="bower_components/bootstrap/js/alert.js"></script>
-    <script src="bower_components/bootstrap/js/dropdown.js"></script>
-    <script src="bower_components/bootstrap/js/tooltip.js"></script>
-    <script src="bower_components/bootstrap/js/modal.js"></script>
-    <script src="bower_components/bootstrap/js/transition.js"></script>
-    <script src="bower_components/bootstrap/js/button.js"></script>
-    <script src="bower_components/bootstrap/js/popover.js"></script>
-    <script src="bower_components/bootstrap/js/carousel.js"></script>
-    <script src="bower_components/bootstrap/js/scrollspy.js"></script>
-    <script src="bower_components/bootstrap/js/collapse.js"></script>
-    <script src="bower_components/bootstrap/js/tab.js"></script>
-    <!-- endbuild -->
-
-    <!-- build:js({app,.tmp}) scripts/main.js -->
-    <script src="scripts/main.js"></script>
-    <!-- endbuild -->
-  </body>
+      </script>
+      <!-- build:js(.) scripts/plugins.js -->
+      <script src="bower_components/bootstrap/js/affix.js"></script>
+      <script src="bower_components/bootstrap/js/alert.js"></script>
+      <script src="bower_components/bootstrap/js/dropdown.js"></script>
+      <script src="bower_components/bootstrap/js/tooltip.js"></script>
+      <script src="bower_components/bootstrap/js/modal.js"></script>
+      <script src="bower_components/bootstrap/js/transition.js"></script>
+      <script src="bower_components/bootstrap/js/button.js"></script>
+      <script src="bower_components/bootstrap/js/popover.js"></script>
+      <script src="bower_components/bootstrap/js/carousel.js"></script>
+      <script src="bower_components/bootstrap/js/scrollspy.js"></script>
+      <script src="bower_components/bootstrap/js/collapse.js"></script>
+      <script src="bower_components/bootstrap/js/tab.js"></script>
+      <!-- endbuild -->
+      <!-- build:js({app,.tmp}) scripts/main.js -->
+      <script src="scripts/main.js"></script>
+      <!-- endbuild -->
+    </body>
   </html>

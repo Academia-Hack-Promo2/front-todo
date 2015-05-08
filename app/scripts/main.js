@@ -1,1 +1,3 @@
-console.log('\'Allo \'Allo!');
+$(function () {
+    $('#datetimepicker1').datetimepicker();
+});
