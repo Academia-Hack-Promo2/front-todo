@@ -25,7 +25,7 @@ $(function () {
         var category = {"title": newCategory.val()};
           $.ajax({
             type:'post',
-            url: 'http://localhost:4000/categories',
+            url: 'http://todolist.com:3000/categories',
             data: category,
 
             success: function(data){
@@ -48,7 +48,7 @@ $(function () {
   (function(){
     $.ajax({
       type:'get',
-      url: 'http://localhost:4000/categories',
+      url: 'http://todolist.com:3000/categories',
 
       success: function(data){
         for (var i = 0; i < data.length; i++ ){
@@ -63,6 +63,33 @@ $(function () {
      
     });
   }());
-
+  $("#saveTodo").click(function(){
+      var categoryId = $("#categories").val();
+     var todo = {
+      "title": $("#title").val(),
+      "categories": $("#categories").val(),
+      "task_type": $("#task_type").val(),
+      "status": $("#status").val(),
+      "finish_date": $("#finish_date").val() 
+     };
+     $.ajax({
+      type:'post',
+      url: 'http://todolist.com:3000/tasks',
+      data: todo,
+      success: function(data){
+      $("#title").val(""),
+      $("#task_type").val(""),
+      $("#status").val(""),
+      $("#categories").val(""),
+      $("#finish_date").val(""),
+        $("#myModal").modal("hide")
+      },
+      error: function(data){
+        console.log(data);
+      }
+     
+    });
+    
+  });
 
 });

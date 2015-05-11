@@ -31,16 +31,16 @@
           <div class="modal-body">
             <form> <div class="form-group">
               <label for="exampleInputTitle">
-                titulo
+                Titulo
               </label>
-              <input type="title" class="form-control" id="exampleInputTitle" placeholder="Titulo">
+              <input type="title" class="form-control" id="title" placeholder="Titulo">
             </div>
             <div class="form-group">
               <label for="exampleInputCategory">
                 Categoria
               </label>
               <select class="form-control" id="categories">
-                <option value="">Seleccione categoria</option>
+                <option value="default">Seleccione categoria</option>
                 <option value="Nueva">Nueva</option>
               </select>
             </div>
@@ -50,24 +50,20 @@
               <label for="exampleInputType">
                 Tipo
               </label>
-              <select class="form-control">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+              <select class="form-control" id="task_type">
+                <option value="llamada">llamada</option>
+                <option value="citas">citas</option>
+                <option value="diligencias">diligencias</option>
+                <option value="recordatorio">recordatorio</option>
               </select>
             </div>
             <div class="form-group">
               <label for="exampleInputStatus">
                 Status
               </label>
-              <select class="form-control">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+              <select class="form-control" id="status">
+                <option>pendiente</option>
+                <option>listo</option>
               </select>
             </div>
             <div class="form-group">
@@ -75,7 +71,7 @@
                   Fecha
                 </label>
               <div class='input-group date' id='datetimepicker1'>
-                <input type='text' class="form-control" />
+                <input type='text' class="form-control" id="finish_date"/>
                 <span class="input-group-addon">
                   <span class="glyphicon glyphicon-calendar"></span>
                 </span>
@@ -87,7 +83,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary">Guardar</button>
+          <button type="button" class="btn btn-primary" id="saveTodo">Guardar</button>
         </div>
       </div>
     </div>
