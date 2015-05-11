@@ -4,6 +4,7 @@ body { padding-top: 70px; }
   border: 1px solid #000;
   position: relative;
   padding: 10px;
+  margin-bottom: 10px;
 }
 .box-btn{
   text-align: center;
