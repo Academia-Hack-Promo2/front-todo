@@ -96,7 +96,7 @@ $(function () {
       
     
     var task = tasks[i];
-    $("#mainbox").append("<div class='col-md-4 col-sm-6 col-xs-12'><div class='box'><div id='alert' class=''></div><b>titulo:  "+ task.title+"</b><br><b>Categoria:  "+ task.category_id+"</b><br><b>Tipo:  "+ task.task_type+"</b><button type='button' class='status btn btn-sm btn-info'><i class='glyphicon glyphicon-ok'></i></button></div></div>");
+    $("#mainbox").append("<div class='col-md-4 col-sm-6 col-xs-12'><div class='box btn-default'><div id='alert' class=''></div><h3>titulo:  "+ task.title+"</h3><h3r><h3>Categoria:  "+ task.category_id+"</h3><h3r><h3>Tipo:  "+ task.task_type+"</h3><button type='button' class='status btn btn-sm btn-info'><i class='glyphicon glyphicon-ok'></i></button></div></div>");
     };
   } );
 

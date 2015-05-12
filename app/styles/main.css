@@ -1,11 +1,15 @@
 body { padding-top: 70px; }
+
 .box{
   height: 200px;
-  border: 1px solid #000;
+  border-radius: 50px;
   position: relative;
   padding: 10px;  
   margin-bottom: 10px;
+  z-index: 10;
+  text-align: center;
 }
+
 .box-btn{
   text-align: center;
   font-size: 60px;
@@ -16,6 +20,10 @@ body { padding-top: 70px; }
   position: absolute;
   height: 36px;
   width: 36px;
-  right: 10px;
+  right: 40px;
   bottom: 10px;
+}
+
+.row{
+  z-index: 0;
 }
