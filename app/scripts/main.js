@@ -108,16 +108,6 @@ $(function () {
     } );
   });
 
-<<<<<<< HEAD
-=======
-  $.get("http://localhost:3000/tasks", function(tasks){
-    console.log(tasks[0]);
-    for (var i =0; i <= tasks.length; i++) {
-    var task = tasks[i];
-    $("#mainbox").append("<div class='col-md-4 col-sm-6 col-xs-12'><div class='box btn-default'><div id='alert' class=''></div><h3>titulo:  "+ task.title+"</h3><h3r><h3>Categoria:  "+ task.category_id+"</h3><h3r><h3>Tipo:  "+ task.task_type+"</h3><button type='button' class='status btn btn-sm btn-info'><i class='glyphicon glyphicon-ok'></i></button></div></div>");
-    };
-  } );
->>>>>>> 6a45d2c77a2a897b1d13c4288a62156ce0819243
 
 
 });
