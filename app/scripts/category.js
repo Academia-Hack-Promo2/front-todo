@@ -8,7 +8,6 @@
     success: function(data){
       for (var i = 0; i < data.length; i++ ){          
         $('#category').append('<div class="col-md-4 col-sm-6 col-xs-12"><div class="box btn-info" data-category="' + data[i].id+ '"><br><br><h3>'+data[i].title+'</h3></div></div>');
-        console.log(data);
       }
       $(".box").click(function(){
         var category_id = $(this).data("category")
