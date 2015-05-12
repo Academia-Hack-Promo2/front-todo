@@ -20,74 +20,7 @@
   <body>
     <!--[if lt IE 10]>
     <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel">Nueva tarea</h4>
-          </div>
-          <div class="modal-body">
-            <form> <div class="form-group">
-              <label for="exampleInputTitle">
-                Titulo
-              </label>
-              <input type="title" class="form-control" id="title" placeholder="Titulo">
-            </div>
-            <div class="form-group">
-              <label for="exampleInputCategory">
-                Categoria
-              </label>
-              <select class="form-control" id="categories">
-                <option value="default">Seleccione categoria</option>
-                <option value="Nueva">Nueva</option>
-              </select>
-            </div>
-              <input type="title" class="form-control" id="new_category" placeholder="Nueva Categoria">
-              <h4 id="error_category"></h4> 
-            <div class="form-group">
-              <label for="exampleInputType">
-                Tipo
-              </label>
-              <select class="form-control" id="task_type">
-                <option value="llamada">llamada</option>
-                <option value="citas">citas</option>
-                <option value="diligencias">diligencias</option>
-                <option value="recordatorio">recordatorio</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="exampleInputStatus">
-                Status
-              </label>
-              <select class="form-control" id="status">
-                <option>pendiente</option>
-                <option>listo</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="exampleInputDate">
-                  Fecha
-                </label>
-              <div class='input-group date' id='datetimepicker1'>
-                <input type='text' class="form-control" id="finish_date"/>
-                <span class="input-group-addon">
-                  <span class="glyphicon glyphicon-calendar"></span>
-                </span>
-              </div>
-            </div>
-            
-            
-          </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-          <button type="button" class="btn btn-primary" id="saveTodo">Guardar</button>
-        </div>
-      </div>
-    </div>
-  </div>
+    <![endif]--> 
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -109,32 +42,14 @@
           <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
         </form>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">ToDo</a></li>
-          <li><a href="category.html">Categoria</a></li>
+          <li><a href="index.html">ToDo</a></li>
+          <li><a href="#">Categoria</a></li>
         </ul>
         </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
       </nav>
       <section class="container-fluid">
-        <div class="row">
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="box box-btn" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-plus"></i></div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="box">
-              <div>
-                <b>title</b>:XXXXXXXX<br>
-                <b>Categoria</b>:XXXXXXXX<br>
-                <b>Tipo</b>:XXXXXXXXXXX
-              </div>
-              <button type="button" class="status btn btn-sm btn-info">
-              <i class="glyphicon glyphicon-ok"></i>
-              </button>
-            </div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="box"></div>
-          </div>
+        <div class="row" id="category">         
         </div>
       </section>
       <!-- build:js(.) scripts/vendor.js -->
@@ -170,6 +85,7 @@
       <!-- endbuild -->
       <!-- build:js({app,.tmp}) scripts/main.js -->
       <script src="scripts/main.js"></script>
+      <script src="scripts/category.js"></script>
       <!-- endbuild -->
     </body>
   </html>

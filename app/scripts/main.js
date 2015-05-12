@@ -25,7 +25,7 @@ $(function () {
         var category = {"title": newCategory.val()};
           $.ajax({
             type:'post',
-            url: 'http://todolist.com:3000/categories',
+            url: 'http://localhost:3000/categories',
             data: category,
 
             success: function(data){
@@ -48,7 +48,7 @@ $(function () {
   (function(){
     $.ajax({
       type:'get',
-      url: 'http://todolist.com:3000/categories',
+      url: 'http://localhost:3000/categories',
 
       success: function(data){
         for (var i = 0; i < data.length; i++ ){
@@ -74,7 +74,7 @@ $(function () {
      };
      $.ajax({
       type:'post',
-      url: 'http://todolist.com:3000/tasks',
+      url: 'http://localhost:3000/tasks',
       data: todo,
       success: function(data){
       $("#title").val(""),
@@ -91,5 +91,4 @@ $(function () {
     });
     
   });
-
 });
