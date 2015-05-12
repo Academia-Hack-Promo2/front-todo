@@ -91,14 +91,10 @@ $(function () {
     
   });
   $.get("http://localhost:3000/categories", function(categorys){
-    console.log(categorys);
     $.get("http://localhost:3000/tasks", function(tasks){
-      console.log(tasks);
       for (var i =0; i < tasks.length; i++) {
         var task = tasks[i];
         for (var j = 0; j < categorys.length; j++) {
-          console.log(task.category_id);
-          console.log(categorys[j].title);
           var category = 'sin categoria';
           if (task.category_id == categorys[j].id ) {
             category = categorys[j].title; 
