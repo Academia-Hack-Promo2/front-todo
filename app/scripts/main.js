@@ -90,14 +90,28 @@ $(function () {
     });
     
   });
+  $.get("http://localhost:3000/categories", function(categorys){
+    console.log(categorys);
+    $.get("http://localhost:3000/tasks", function(tasks){
+      console.log(tasks);
+      for (var i =0; i < tasks.length; i++) {
+        var task = tasks[i];
+        for (var j = 0; j < categorys.length; j++) {
+          console.log(task.category_id);
+          console.log(categorys[j].title);
+          var category = 'sin categoria';
+          if (task.category_id == categorys[j].id ) {
+            category = categorys[j].title; 
+          };
+          $("#mainbox").append("<div class='col-md-4 col-sm-6 col-xs-12'><div class='box'><div id='alert' class=''></div><b>Titulo:  "+
+           task.title+"</b><br><b>Categoria:  "
+           +category+"</b><br><b>Tipo:  "+
+            task.task_type+"</b><button type='button' class='status btn btn-sm btn-info'><i class='glyphicon glyphicon-ok'></i></button></div></div>");
+        };
+      };
+    } );
+  });
 
-  $.get("http://localhost:3000/tasks", function(tasks){
-    console.log(tasks[0]);
-    for (var i =0; i <= tasks.length; i++) {
-    var task = tasks[i];
-    $("#mainbox").append("<div class='col-md-4 col-sm-6 col-xs-12'><div class='box'><div id='alert' class=''></div><b>titulo:  "+ task.title+"</b><br><b>Categoria:  "+ task.category_id+"</b><br><b>Tipo:  "+ task.task_type+"</b><button type='button' class='status btn btn-sm btn-info'><i class='glyphicon glyphicon-ok'></i></button></div></div>");
-    };
-  } );
 
 
 });
