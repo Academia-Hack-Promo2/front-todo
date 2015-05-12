@@ -25,7 +25,7 @@ $(function () {
         var category = {"title": newCategory.val()};
           $.ajax({
             type:'post',
-            url: 'http://todolist.com:3000/categories',
+            url: 'http://localhost:3000/categories',
             data: category,
 
             success: function(data){
@@ -48,12 +48,13 @@ $(function () {
   (function(){
     $.ajax({
       type:'get',
-      url: 'http://todolist.com:3000/categories',
+      url: 'http://localhost:3000/categories',
 
       success: function(data){
         for (var i = 0; i < data.length; i++ ){
           var categoryTitle = data[i].title;
-          $('#categories').prepend('<option>'+categoryTitle+'</option>');
+          var categoryIdGet = data[i].id;
+          $('#categories').prepend('<option value="'+categoryIdGet+'">'+categoryTitle+'</option>');
         }
       },
 
@@ -67,14 +68,14 @@ $(function () {
       var categoryId = $("#categories").val();
      var todo = {
       "title": $("#title").val(),
-      "categories": $("#categories").val(),
+      "category_id": $("#categories").val(),
       "task_type": $("#task_type").val(),
       "status": $("#status").val(),
       "finish_date": $("#finish_date").val() 
      };
      $.ajax({
       type:'post',
-      url: 'http://todolist.com:3000/tasks',
+      url: 'http://localhost:3000/tasks',
       data: todo,
       success: function(data){
       $("#title").val(""),
