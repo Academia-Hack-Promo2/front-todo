@@ -22,8 +22,8 @@
            var clear = function(){return $('#tasks').html('  ');};
            var abox = function(){return $("#tasks").append(box);};
 
-            clear().fadeOut(1000,function() {
-            setTimeout(function() {abox().fadeIn(2000)},1000);
+            clear().fadeOut(100,function() {
+            setTimeout(function() {abox().fadeIn(2000)},100);
           });
          },
          error:  function(response){
