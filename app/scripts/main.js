@@ -126,11 +126,13 @@ $(function() {
                     };
                 };
                 if (task.status == 'pendiente') {
+                    var alert = 'alert alert-danger'
                   var tasks_status = 'btn-danger glyphicon glyphicon-time'
                 }else{
                   tasks_status = 'btn-info glyphicon glyphicon-ok'
+                  alert = 'alert alert-info'
                 }
-                $("#mainbox").append("<div class='col-md-4 col-sm-6 col-xs-12'><div class='box2'><div id='task-" + task.id+ "' class=''></div><b>Titulo:  " +
+                $("#mainbox").append("<div class='col-md-4 col-sm-6 col-xs-12'><div class='box2'><div style='display:none' id='task-" + task.id+ "' class='"+ alert +"'></div><b>Titulo:  " +
                     task.title + "</b><br><b>Categoria:  " + category + "</b><br><b>Tipo:  " +
                     task.task_type + "</b>" + '<button class="status btn btn-sm '+tasks_status+'" data-info=' + task.id + ' data-attr= ' + task.status + '></button></div></div>');
             };
@@ -143,12 +145,7 @@ $(function() {
                 var task_status = $(this).data("attr");
                 var alertBox = $("#task-"+task_id);
 
-                if (alertBox.hasClass('')) {
-                    alertBox.addClass('alert alert-danger');
-                    alertBox.html("Tarea pendiente")
-                    alertBox.fadeOut(2000);
-
-                } else if (alertBox.hasClass('alert alert-info')) {
+                if (alertBox.hasClass('alert alert-info')) {
                     alertBox.removeClass('alert alert-info').addClass('alert alert-danger');
                     alertBox.html("Tarea pendiente")
                     alertBox.fadeIn();
