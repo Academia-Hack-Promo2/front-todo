@@ -7,18 +7,28 @@ body { padding-top: 70px; }
   padding: 10px;  
   margin-bottom: 10px;
   margin-top: 10px;
-  z-index: 10;
   text-align: center;
+  background-color: #f7f7f9;
 }
 
 .box2{
   height: 200px;
+  border-radius: 0px 60px 0px 60px;
+  position: relative;
+  padding: 10px;  
   margin-bottom: 10px;
   margin-top: 10px;
-  position: relative;
   text-align: center;
-  padding: 10px 40px 0px 0px;
-  border: 1px solid #000;
+}
+
+.box3{
+  height: 50px;
+  border-radius: 0px 60px 0px 60px;
+  position: relative;
+  padding: 10px;  
+  margin-bottom: 10px;
+  margin-top: 10px;
+  text-align: center;
 }
 
 .box-btn{
@@ -45,7 +55,7 @@ top:155px;
 }
 
 .title{
-  border-radius: 0px 50px 0px 50px;
+  border-radius: 25px ;
   width: 50%;
   position: relative;
   margin: 10px auto;
